@@ -1,7 +1,7 @@
 INSERT INTO products (name, description, price, stock_quantity) 
 VALUES ('Навушники AirPods', 'Бездротові навушники', 8000.00, 20);
 
-INSERT INTO product_categories (product_id, category_id)
+INSERT INTO product_categories (product_id, category_id) 
 VALUES (4, 1);
 
 
