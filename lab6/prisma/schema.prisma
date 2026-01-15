@@ -76,12 +76,23 @@ model products {
   description        String?
   price              Decimal              @db.Decimal(10, 2)
   stock_quantity     Int?                 @default(0)
+  is_active          Boolean              @default(true)
   order_items        order_items[]
   product_categories product_categories[]
+  reviews            reviews[]
 }
 
 model zip_codes {
   zip_code  String      @id @db.VarChar(20)
   city      String      @db.VarChar(100)
   addresses addresses[]
+}
+
+model reviews {
+  review_id  Int      @id @default(autoincrement())
+  rating     Int
+  comment    String?
+  created_at DateTime @default(now()) @db.Timestamp(6)
+  product_id Int
+  products   products @relation(fields: [product_id], references: [product_id], onDelete: Cascade)
 }
