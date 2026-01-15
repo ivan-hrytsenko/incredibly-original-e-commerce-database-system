@@ -2,4 +2,4 @@ docker-compose.yml
 
 lab6/node_modules
 lab6/.env
-lab6/generated/prisma
+lab6/generated
